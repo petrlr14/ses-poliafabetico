@@ -17,7 +17,6 @@ public class Poli {
                 currentNumber="";
             }
         }
-        alfabetos.forEach(System.out::println);
         System.out.println(calclo(word, alfabetos));
     }
 
