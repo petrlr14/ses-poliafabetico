@@ -4,6 +4,7 @@ import java.util.List;
 public class Poli {
 
     public static void main(String[] args) {
+        System.out.println((int)'Ñ');
         List<String> alfabetos = new ArrayList<>();
         String regla = args[0];
         String way = args[1];
@@ -30,15 +31,17 @@ public class Poli {
         for (int i = 0; i < user.length(); i++) {
             int lastIndex = abc.size() - 1;
             int index = abc.indexOf((int) user.charAt(i));
-            int indexPlusOffset = index + offset;
-            if ((indexPlusOffset) > lastIndex) {
-                index = (-1) + (indexPlusOffset - lastIndex);
-            } else if (indexPlusOffset < 0) {
-                index = abc.size() + (indexPlusOffset);
-            } else {
-                index = indexPlusOffset;
+            if(index!=-1){
+                int indexPlusOffset = index + offset;
+                if ((indexPlusOffset) > lastIndex) {
+                    index = (-1) + (indexPlusOffset - lastIndex);
+                } else if (indexPlusOffset < 0) {
+                    index = abc.size() + (indexPlusOffset);
+                } else {
+                    index = indexPlusOffset;
+                }
+                newWord += (char) ((int) abc.get(index));
             }
-            newWord += (char) ((int) abc.get(index));
         }
         return newWord;
     }
@@ -71,14 +74,14 @@ public class Poli {
         for (int i = 97; i <= 110; i++) {
             list.add(i);
         }
-        list.add(164);
+        list.add(241);
         for (int i = 111; i <= 122; i++) {
             list.add(i);
         }
         for (int i = 65; i <= 78; i++) {
             list.add(i);
         }
-        list.add(165);
+        list.add(209);
         for (int i = 79; i <= 90; i++) {
             list.add(i);
         }
